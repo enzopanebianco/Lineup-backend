@@ -4,11 +4,11 @@ import { Player } from '../models/Player'
 
 export const appDataSource = new DataSource(
     {
-        database: 'lineup',
-        username: 'root',
-        password: 'root',
-        host: 'localhost',
-        port: 3306,
+        database: process.env.DB_NAME,
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        host: process.env.DB_HOST,
+        port: Number(process.env.DB_PORT),
         type: "mysql",
         entities: [
             Lineup,
